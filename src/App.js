@@ -107,7 +107,12 @@ function App() {
   const [submit_state,setSubmit] = useState(0);
 
   if (submit_state === 1){
-    return <ComputeScore questions={questions_arr} />;
+    return (
+      <>
+        <ComputeScore questions={questions_arr} />
+        <button onClick={() => setSubmit(0)} > Start Over </button>
+      </>
+    );
   }
 
   return (
