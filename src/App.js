@@ -90,7 +90,7 @@ function ComputeScore({questions}){
   var score = 0;
   for(var i=0;i<questions.length;i++){
     if(document.getElementById(questions[i].id+questions[i].answer).checked){
-      score++
+      score++;
     }
   }
 
