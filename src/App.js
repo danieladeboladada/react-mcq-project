@@ -71,13 +71,12 @@ function DisplayQuestionOptions({q_id, options}){
 }
 
 function DisplayAllQuestions({questions}){
-  var q_no=1;
 
   return (
     <>
       {questions.map(qobject => (
       <div key={qobject.id.toString()} >
-        <h1> {q_no++}) {qobject.question} </h1>
+        <h1> {qobject.id}) {qobject.question} </h1>
         <DisplayQuestionOptions q_id={qobject.id} options={qobject.options} />
       </div>
       ))}
@@ -88,16 +87,29 @@ function DisplayAllQuestions({questions}){
 
 function ComputeScore({questions}){
   var score = 0;
+  var incorrect={};//{question: answer, q1: a1, ...}
+  var q=[];
+
   for(var i=0;i<questions.length;i++){
     if(document.getElementById(questions[i].id+questions[i].answer).checked){
       score++;
     }
+    else{
+      q.push(questions[i].question);
+      incorrect[questions[i].question] = questions[i].options[questions[i].answer];
+    }
   }
 
   return (
-    <>
-      <h1> Your Score is {score}/4 </h1>
-    </>
+      <>
+        <h1> Your Score is {score}/4 </h1>
+        {q.map(q_question => (
+        <div key={ q_question } >
+          <h4 > Question: { q_question } </h4>
+          <h5 > Answer: { incorrect[q_question] } </h5>
+        </div>
+        ))}
+      </>
   );
 
 }
