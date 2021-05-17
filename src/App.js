@@ -75,10 +75,10 @@ function DisplayAllQuestions({questions}){
   return (
     <>
       {questions.map(qobject => (
-      <div key={qobject.id.toString()} >
-        <h1> {qobject.id}) {qobject.question} </h1>
-        <DisplayQuestionOptions q_id={qobject.id} options={qobject.options} />
-      </div>
+        <div key={qobject.id.toString()} >
+          <h1> {qobject.id}) {qobject.question} </h1>
+          <DisplayQuestionOptions q_id={qobject.id} options={qobject.options} />
+        </div>
       ))}
     </>
     
@@ -104,10 +104,10 @@ function ComputeScore({questions}){
       <>
         <h1> Your Score is {score}/4 </h1>
         {q.map(q_question => (
-        <div key={ q_question } >
-          <h4 > Question: { q_question } </h4>
-          <h5 > Answer: { incorrect[q_question] } </h5>
-        </div>
+          <div key={ q_question } >
+            <h4 > Question: { q_question } </h4>
+            <h5 > Answer: { incorrect[q_question] } </h5>
+          </div>
         ))}
       </>
   );
@@ -122,7 +122,7 @@ function App() {
     return (
       <>
         <ComputeScore questions={questions_arr} />
-        <button onClick={() => setSubmit(0)} > Start Over </button>
+        <button id="start-over" onClick={() => setSubmit(0)} > Start Over </button>
       </>
     );
   }
@@ -130,7 +130,7 @@ function App() {
   return (
     <>
       <DisplayAllQuestions questions={questions_arr} /><br />
-      <button onClick={() => setSubmit(1)} > Finish </button>
+      <button id="finish" onClick={() => setSubmit(1)} > Finish </button>
     </>
   );
 }
