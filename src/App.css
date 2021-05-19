@@ -4,18 +4,26 @@
 
 #start-over {
   display: block;
-  font-size: 3em;
-  background-color: green;
+  font-size: 2em;
+  background-color: darkgoldenrod;
   cursor: pointer;
   border: 2px solid black;
+  font-family: 
+    "Times New Roman", 
+    Times,
+    serif;
 }
 
 #finish{
   display: block;
   font-size: 3em;
-  background-color: green;
+  background-color: darkgoldenrod;
   cursor: pointer;
   border: 2px solid black;
+  font-family: 
+    "Times New Roman", 
+    Times,
+    serif;
 }
 
 .App-logo {

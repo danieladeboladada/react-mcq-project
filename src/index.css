@@ -1,9 +1,10 @@
 body {
   margin: 0;
-  background-color: papayawhip;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: lightcyan;
+  font-family: 
+    "Times New Roman", 
+    Times,
+    serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

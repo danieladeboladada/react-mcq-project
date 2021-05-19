@@ -61,7 +61,10 @@ function DisplayQuestionOptions({q_id, options}){
   return (
     <>
       {letters.map(letter => (
-        <div key={q_id + letter} >
+        <div key={q_id + letter} style= {{
+          backgroundColor: "lightsalmon",
+          borderStyle: "outset"
+        }}>
           <input type="radio" id={q_id + letter} name={q_id} value={letter} />
           <label> {options[letter]} </label><br></br>
         </div>
@@ -76,7 +79,12 @@ function DisplayAllQuestions({questions}){
     <>
       {questions.map(qobject => (
         <div key={qobject.id.toString()} >
-          <h1> {qobject.id}) {qobject.question} </h1>
+          <h1 style= {{
+            backgroundColor: "mintcream",
+            borderStyle: "double"
+          }}> 
+            {qobject.id}) {qobject.question} 
+          </h1>
           <DisplayQuestionOptions q_id={qobject.id} options={qobject.options} />
         </div>
       ))}
@@ -106,7 +114,10 @@ function ComputeScore({questions}){
         {q.map(q_question => (
           <div key={ q_question } >
             <h4 > Question: { q_question } </h4>
-            <h5 > Answer: { incorrect[q_question] } </h5>
+            <h5 style={{
+              backgroundColor: "forestgreen",
+              borderStyle: "none"
+            }} > Answer: { incorrect[q_question] } </h5>
           </div>
         ))}
       </>
@@ -122,7 +133,7 @@ function App() {
     return (
       <>
         <ComputeScore questions={questions_arr} />
-        <button id="start-over" onClick={() => setSubmit(0)} > Start Over </button>
+        <button id="start-over" onClick={() => setSubmit(0)} > START OVER </button>
       </>
     );
   }
@@ -130,7 +141,7 @@ function App() {
   return (
     <>
       <DisplayAllQuestions questions={questions_arr} /><br />
-      <button id="finish" onClick={() => setSubmit(1)} > Finish </button>
+      <button id="finish" onClick={() => setSubmit(1)} > FINISH </button>
     </>
   );
 }
