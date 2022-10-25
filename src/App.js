@@ -80,8 +80,8 @@ function DisplayAllQuestions({questions}){
       {questions.map(qobject => (
         <div key={qobject.id.toString()} >
           <h1 style= {{
-            backgroundColor: "mintcream",
-            borderStyle: "double"
+            backgroundColor: "mintcream"
+            // borderStyle: "double"
           }}> 
             {qobject.id}) {qobject.question} 
           </h1>
