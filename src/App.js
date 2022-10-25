@@ -96,7 +96,7 @@ function DisplayAllQuestions({questions}){
 function ComputeScore({questions}){
   var score = 0;
   var incorrect={};//{question: answer, q1: a1, ...}
-  var q=[];
+  var q=[];//[question1, question2, ...]
 
   for(var i=0;i<questions.length;i++){
     if(document.getElementById(questions[i].id+questions[i].answer).checked){
@@ -139,10 +139,10 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <DisplayAllQuestions questions={questions_arr} /><br />
       <button id="finish" onClick={() => setSubmit(1)} > FINISH </button>
-    </>
+    </div>
   );
 }
 
